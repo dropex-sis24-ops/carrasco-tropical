@@ -1,0 +1,13 @@
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Configuración local de herramientas
+.claude/
+.hallmark/log.json
+.hallmark/preflight.json
+
+# Dependencias y builds
+node_modules/
+*.zip
+.hallmark/salt

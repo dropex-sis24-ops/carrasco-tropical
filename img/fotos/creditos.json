@@ -1,0 +1,74 @@
+{
+ "portada-carrasco": {
+  "titulo": "Parque Nacional Carrasco 01.jpg",
+  "autor": "Phernandito",
+  "licencia": "CC BY-SA 4.0",
+  "pagina": "https://commons.wikimedia.org/wiki/File:Parque_Nacional_Carrasco_01.jpg",
+  "ancho": 2000,
+  "alto": 1325
+ },
+ "ivirgarzama-satelite": {
+  "titulo": "Ivirgarzama, Bolívia´s Puerto Villarroel county.jpg",
+  "autor": "Coordenação-Geral de Observação da Terra/INPE",
+  "licencia": "CC BY-SA 2.0",
+  "pagina": "https://commons.wikimedia.org/wiki/File:Ivirgarzama,_Bol%C3%ADvia%C2%B4s_Puerto_Villarroel_county.jpg",
+  "ancho": 1800,
+  "alto": 1012
+ },
+ "villa-tunari-vista": {
+  "titulo": "Una bella vista de villa tunari.JPG",
+  "autor": "Gaby condori contreras",
+  "licencia": "CC BY-SA 3.0",
+  "pagina": "https://commons.wikimedia.org/wiki/File:Una_bella_vista_de_villa_tunari.JPG",
+  "ancho": 1400,
+  "alto": 1050
+ },
+ "villa-tunari-rio": {
+  "titulo": "Villa Tunari-nX-3.jpg",
+  "autor": "PsamatheM",
+  "licencia": "CC BY-SA 4.0",
+  "pagina": "https://commons.wikimedia.org/wiki/File:Villa_Tunari-nX-3.jpg",
+  "ancho": 1400,
+  "alto": 933
+ },
+ "rio-espiritu-santo": {
+  "titulo": "Río Espíritu Santo (Villa Tunari).jpg",
+  "autor": "Grullab",
+  "licencia": "CC BY-SA 4.0",
+  "pagina": "https://commons.wikimedia.org/wiki/File:R%C3%ADo_Esp%C3%ADritu_Santo_(Villa_Tunari).jpg",
+  "ancho": 1400,
+  "alto": 615
+ },
+ "rio-chapare": {
+  "titulo": "Chapare´s river.jpg",
+  "autor": "ozziebackpacker",
+  "licencia": "CC BY 2.0",
+  "pagina": "https://commons.wikimedia.org/wiki/File:Chapare%C2%B4s_river.jpg",
+  "ancho": 1400,
+  "alto": 1050
+ },
+ "cochabamba-cristo": {
+  "titulo": "Cristo de la Concordia - Cochabamba.jpg",
+  "autor": "Einar Paz",
+  "licencia": "CC BY-SA 4.0",
+  "pagina": "https://commons.wikimedia.org/wiki/File:Cristo_de_la_Concordia_-_Cochabamba.jpg",
+  "ancho": 1400,
+  "alto": 788
+ },
+ "bulo-bulo": {
+  "titulo": "Bulo Bulo - panoramio.jpg",
+  "autor": "Gustavo Ayllón A.",
+  "licencia": "CC BY-SA 3.0",
+  "pagina": "https://commons.wikimedia.org/wiki/File:Bulo_Bulo_-_panoramio.jpg",
+  "ancho": 1400,
+  "alto": 1050
+ },
+ "confluencia-rios": {
+  "titulo": "ISS-46 Bolivia, confluence of Chimoré, Ichilo and Mamoré River.jpg",
+  "autor": "NASA/Tim Kopra",
+  "licencia": "Public domain",
+  "pagina": "https://commons.wikimedia.org/wiki/File:ISS-46_Bolivia,_confluence_of_Chimor%C3%A9,_Ichilo_and_Mamor%C3%A9_River.jpg",
+  "ancho": 1400,
+  "alto": 932
+ }
+}

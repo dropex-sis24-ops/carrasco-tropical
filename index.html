@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pasajes con QR y buses en vivo | Carrasco Tropical</title>
+<meta name="description" content="Compra tu pasaje con QR bancario y sigue en el mapa los buses del Sindicato de Transportes Carrasco Tropical, Ivirgarzama.">
+<link rel="icon" href="img/logo-carrasco-tropical.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+<link rel="stylesheet" href="css/site.css?v=mwwg3t58">
+</head>
+<body data-pagina="inicio">
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+<div class="marco">
+<aside class="lateral" id="lateral" aria-label="Menú principal">
+  <div class="lateral__cab">
+    <a class="lateral__marca" href="index.html"><img src="img/logo-carrasco-tropical.jpg" alt="" width="48" height="48"><span>Carrasco<br>Tropical</span></a>
+    <button class="lateral__cerrar" type="button" data-menu-cerrar aria-label="Cerrar menú"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <a class="btn lateral__buscar" href="viajes.html"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg> Buscar pasajes</a>
+  <nav><ul class="lateral__lista"><li><a href="index.html" aria-current="page"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11l8-6.5 8 6.5"/><path d="M6 9.5V20h12V9.5"/></svg><span>Inicio</span></a></li><li><a href="viajes.html"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg><span>Viajes de hoy</span></a></li><li><a href="mapa.html"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4.5L3.5 6.5v13L9 17.5l6 2 5.5-2v-13L15 6.5z"/><path d="M9 4.5v13M15 6.5v13"/></svg><span>Mapa en vivo</span></a></li><li><a href="seguimiento.html"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-6.2-6.5-11a6.5 6.5 0 0113 0c0 4.8-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg><span>Sigue tu bus</span></a></li><li><a href="verificar.html"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4z"/><path d="M14 14h2.5v2.5H14zM17.5 17.5H20V20h-2.5zM14 19h2M19 14v2"/></svg><span>Verificar pasaje</span></a></li><li><a href="tarifas.html"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16v10H4z"/><circle cx="12" cy="12" r="2.4"/><path d="M7 10v4M17 10v4"/></svg><span>Rutas y tarifas</span></a></li>
+    <li><a href="seguimiento.html#preguntas"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.6 9.5a2.5 2.5 0 114 2c-.9.6-1.6 1.1-1.6 2.3"/><path d="M12 16.8v.2"/></svg><span>Preguntas frecuentes</span></a></li>
+    <li><span class="lateral__pendiente" title="El número lo confirma el sindicato"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 19.5l1.2-3.6A7.5 7.5 0 1112 19.5a7.6 7.6 0 01-3.7-1z"/></svg><span>WhatsApp</span><em class="pendiente">por confirmar</em></span></li>
+  </ul></nav>
+  <a class="lateral__pasajero" href="#" aria-disabled="true" title="Disponible con la app del pasajero"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8.5" r="3.5"/><path d="M5 20c.8-3.6 3.6-5.5 7-5.5s6.2 1.9 7 5.5"/></svg> Soy pasajero</a>
+</aside>
+<div class="principal">
+<div class="utilidad">
+  <div class="utilidad__in">
+    <p>Paga tu pasaje con <strong>QR desde cualquier banco</strong></p>
+    <nav aria-label="Ayuda"><a href="verificar.html">Verificar pasaje</a><a href="seguimiento.html#preguntas">Preguntas frecuentes</a></nav>
+  </div>
+</div>
+<header class="barra">
+  <div class="barra__in">
+    <button class="barra__menu" type="button" data-menu-abrir aria-controls="lateral" aria-expanded="false" aria-label="Abrir menú"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    <a class="marca" href="index.html"><img src="img/logo-carrasco-tropical.jpg" alt="" width="40" height="40"><span>Carrasco <b>Tropical</b></span></a>
+    <nav class="barra__nav" aria-label="Secciones"><a href="index.html" aria-current="page">Inicio</a><a href="viajes.html">Viajes de hoy</a><a href="mapa.html">Mapa en vivo</a><a href="seguimiento.html">Sigue tu bus</a><a href="tarifas.html">Rutas y tarifas</a></nav>
+    <div class="barra__acc">
+      <a class="btn btn--chico" href="seguimiento.html"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-6.2-6.5-11a6.5 6.5 0 0113 0c0 4.8-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg> Sigue tu bus</a>
+    </div>
+  </div>
+</header>
+<main id="contenido">
+
+<section class="portada">
+  <div class="portada__img"><img src="img/fotos/portada-carrasco.jpg" alt="Montañas verdes con neblina en el Parque Nacional Carrasco" width="2000" height="1325" sizes="100vw" loading="eager" style="object-position: 50% 40%"></div>
+  <div class="contenedor portada__in">
+    <h1>Viaja por el trópico, sin filas</h1>
+    <p class="lead">Compra tu pasaje con QR y mira dónde viene tu bus.</p>
+    <a class="btn btn--rojo" href="viajes.html"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg> Viajes de hoy</a>
+  </div>
+</section>
+<div class="banda-busqueda"><div class="contenedor">
+<form class="buscador" action="viajes.html" method="get" data-buscador>
+  <label class="campo">
+    <span class="campo__et"><svg class="ico ico--chico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-6.2-6.5-11a6.5 6.5 0 0113 0c0 4.8-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg> Desde</span>
+    <select name="desde" aria-label="Ciudad de origen"><option value="ivirgarzama" selected>Ivirgarzama</option><option value="chimore">Chimoré</option><option value="shinahota">Shinahota</option><option value="villatunari">Villa Tunari</option><option value="colomi">Colomi</option><option value="sacaba">Sacaba</option><option value="cochabamba">Cochabamba</option><option value="pvillarroel">Puerto Villarroel</option><option value="bulobulo">Bulo Bulo</option></select>
+  </label>
+  <button class="buscador__cambiar" type="button" data-cambiar aria-label="Intercambiar origen y destino"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 4v15M8 19l-3-3M8 19l3-3M16 20V5M16 5l-3 3M16 5l3 3"/></svg></button>
+  <label class="campo">
+    <span class="campo__et"><svg class="ico ico--chico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-6.2-6.5-11a6.5 6.5 0 0113 0c0 4.8-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg> Hasta</span>
+    <select name="hasta" aria-label="Ciudad de destino"><option value="ivirgarzama">Ivirgarzama</option><option value="chimore">Chimoré</option><option value="shinahota">Shinahota</option><option value="villatunari">Villa Tunari</option><option value="colomi">Colomi</option><option value="sacaba">Sacaba</option><option value="cochabamba" selected>Cochabamba</option><option value="pvillarroel">Puerto Villarroel</option><option value="bulobulo">Bulo Bulo</option></select>
+  </label>
+  <label class="campo">
+    <span class="campo__et"><svg class="ico ico--chico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg> Fecha del viaje</span>
+    <input type="date" name="fecha" data-hoy aria-label="Fecha del viaje">
+  </label>
+  <button class="btn btn--grande buscador__ir" type="submit"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg> Buscar pasajes</button>
+</form></div></div>
+
+<section class="contenedor ventajas" aria-label="Por qué viajar con el sindicato">
+  <div class="ventaja"><span class="ventaja__ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4z"/><path d="M14 14h2.5v2.5H14zM17.5 17.5H20V20h-2.5zM14 19h2M19 14v2"/></svg></span><div><p class="ventaja__tit">Paga con QR</p><p>Desde cualquier app de banco.</p></div></div>
+  <div class="ventaja"><span class="ventaja__ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8a2 2 0 002-2h12a2 2 0 002 2v2a2 2 0 000 4v2a2 2 0 00-2 2H6a2 2 0 00-2-2v-2a2 2 0 000-4z"/><path d="M10 6v12" stroke-dasharray="2 2"/></svg></span><div><p class="ventaja__tit">Pasaje seguro</p><p>Con código QR que no se copia.</p></div></div>
+  <div class="ventaja"><span class="ventaja__ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4.5L3.5 6.5v13L9 17.5l6 2 5.5-2v-13L15 6.5z"/><path d="M9 4.5v13M15 6.5v13"/></svg></span><div><p class="ventaja__tit">Bus en vivo</p><p>Ubicación cada 5 a 10 segundos.</p></div></div>
+  <div class="ventaja"><span class="ventaja__ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19a10 10 0 010-14M19 5a10 10 0 010 14M8.5 15.5a5 5 0 010-7M15.5 8.5a5 5 0 010 7"/><circle cx="12" cy="12" r="1.3"/></svg></span><div><p class="ventaja__tit">Sin señal, igual</p><p>Se sincroniza al volver la red.</p></div></div>
+</section>
+
+<section class="contenedor seccion">
+  <div class="sec-cab">
+    <h2>Próximas salidas</h2>
+    <p>Desde la parada de Ivirgarzama y de regreso, en tiempo real.</p>
+  </div>
+  <div class="tablero">
+    <div class="tablero__cab"><p><span class="vivo" aria-hidden="true"></span>Tablero de salidas</p><p class="tablero__reloj num" data-reloj>--:--:--</p></div>
+    <div class="tablero__scroll">
+    <table>
+      <thead><tr><th>Interno</th><th>Ruta</th><th>Sale</th><th data-col-en>Llega</th><th>Vehículo</th><th>Precio</th><th>Estado</th></tr></thead>
+      <tbody data-tablero><tr>
+  <td class="t-int">8</td>
+  <td class="t-ruta">Ivirgarzama a Cochabamba</td>
+  <td class="t-hora num">06:00</td>
+  <td class="t-en num">10:30</td>
+  <td class="t-veh">Bus</td>
+  <td class="t-precio num">Bs 35,00</td>
+  <td><span class="t-est">Programado</span></td>
+</tr><tr>
+  <td class="t-int">24</td>
+  <td class="t-ruta">Ivirgarzama a Villa Tunari</td>
+  <td class="t-hora num">06:00</td>
+  <td class="t-en num">07:15</td>
+  <td class="t-veh">Minibús</td>
+  <td class="t-precio num">Bs 12,00</td>
+  <td><span class="t-est">Programado</span></td>
+</tr><tr>
+  <td class="t-int">32</td>
+  <td class="t-ruta">Ivirgarzama a Puerto Villarroel</td>
+  <td class="t-hora num">06:00</td>
+  <td class="t-en num">06:40</td>
+  <td class="t-veh">Minibús</td>
+  <td class="t-precio num">Bs 6,00</td>
+  <td><span class="t-est">Programado</span></td>
+</tr><tr>
+  <td class="t-int">38</td>
+  <td class="t-ruta">Ivirgarzama a Bulo Bulo</td>
+  <td class="t-hora num">06:00</td>
+  <td class="t-en num">07:00</td>
+  <td class="t-veh">Minibús</td>
+  <td class="t-precio num">Bs 10,00</td>
+  <td><span class="t-est">Programado</span></td>
+</tr><tr>
+  <td class="t-int">25</td>
+  <td class="t-ruta">Villa Tunari a Ivirgarzama</td>
+  <td class="t-hora num">06:10</td>
+  <td class="t-en num">07:25</td>
+  <td class="t-veh">Minibús</td>
+  <td class="t-precio num">Bs 12,00</td>
+  <td><span class="t-est">Programado</span></td>
+</tr><tr>
+  <td class="t-int">33</td>
+  <td class="t-ruta">Puerto Villarroel a Ivirgarzama</td>
+  <td class="t-hora num">06:15</td>
+  <td class="t-en num">06:55</td>
+  <td class="t-veh">Minibús</td>
+  <td class="t-precio num">Bs 6,00</td>
+  <td><span class="t-est">Programado</span></td>
+</tr><tr>
+  <td class="t-int">26</td>
+  <td class="t-ruta">Ivirgarzama a Villa Tunari</td>
+  <td class="t-hora num">06:20</td>
+  <td class="t-en num">07:35</td>
+  <td class="t-veh">Minibús</td>
+  <td class="t-precio num">Bs 12,00</td>
+  <td><span class="t-est">Programado</span></td>
+</tr><tr>
+  <td class="t-int">39</td>
+  <td class="t-ruta">Bulo Bulo a Ivirgarzama</td>
+  <td class="t-hora num">06:20</td>
+  <td class="t-en num">07:20</td>
+  <td class="t-veh">Minibús</td>
+  <td class="t-precio num">Bs 10,00</td>
+  <td><span class="t-est">Programado</span></td>
+</tr></tbody>
+    </table>
+    </div>
+  </div>
+  <p class="centro"><a class="btn btn--grande" href="viajes.html">Ver todos los viajes de hoy</a></p>
+</section>
+
+<section class="contenedor seccion casa">
+  <figure class="casa__foto">
+    <img src="img/fotos/ivirgarzama-satelite.jpg" alt="Vista satelital de Ivirgarzama, sus caminos y los ríos del trópico" width="1800" height="1012" sizes="(min-width: 68rem) 50vw, 100vw" loading="lazy">
+    <figcaption>Ivirgarzama desde el satélite</figcaption>
+  </figure>
+  <div class="casa__texto">
+    <h2>Nuestra casa es Ivirgarzama</h2>
+    <p class="lead">En el corazón de la provincia Carrasco, entre ríos y selva. De nuestra parada salen las cuatro rutas del sindicato.</p>
+    <ul class="casa__datos">
+      <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-6.2-6.5-11a6.5 6.5 0 0113 0c0 4.8-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg> Ivirgarzama, Cochabamba</li>
+      <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5l7 2.8v5.2c0 4.3-3 7.6-7 9-4-1.4-7-4.7-7-9V6.3z"/><path d="M9 12l2 2 4-4"/></svg> Resolución Suprema N° 204268</li>
+    </ul>
+    <a class="btn btn--suave" href="tarifas.html">Ver rutas y paradas</a>
+  </div>
+</section>
+
+<section class="contenedor seccion envivo">
+  <div class="envivo__texto">
+    <h2>Mira dónde viene tu bus</h2>
+    <p class="lead">Cada vehículo del sindicato aparece en el mapa mientras está en ruta.</p>
+    <p class="envivo__cifra"><strong class="num" data-en-ruta>Varios</strong> vehículos en ruta ahora</p>
+    <a class="btn" href="mapa.html">Abrir el mapa</a>
+  </div>
+  <div class="envivo__mapa"><div class="mapa mapa--portada" data-mapa="flota" role="img" aria-label="Mapa con los vehículos del sindicato en ruta"></div></div>
+</section>
+
+<section class="banda-oscura">
+  <div class="banda-oscura__img"><img src="img/fotos/villa-tunari-rio.jpg" alt="Río ancho con selva y montañas entre nubes cerca de Villa Tunari" width="1400" height="933" sizes="100vw" loading="lazy" style="object-position: 50% 40%"></div>
+  <div class="contenedor">
+  <div class="sec-cab sec-cab--fila">
+    <div><h2>Rutas populares</h2><p>Todas salen de Ivirgarzama. Elige tu destino.</p></div>
+    <a class="btn btn--rojo" href="tarifas.html">Ver rutas y tarifas</a>
+  </div>
+  <div class="destinos">
+    <a class="destino" href="viajes.html?desde=ivirgarzama&amp;hasta=cochabamba">
+      <img class="destino__img" src="img/fotos/cochabamba-cristo.jpg" alt="El Cristo de la Concordia en Cochabamba bajo un cielo azul" width="1400" height="788" sizes="(min-width: 68rem) 25vw, 50vw" loading="lazy">
+      <span class="destino__info">
+        <span class="destino__nombre">Cochabamba</span>
+        <span class="destino__meta">Cada 45 min, desde Bs 35,00</span>
+      </span>
+    </a><a class="destino" href="viajes.html?desde=ivirgarzama&amp;hasta=villatunari">
+      <img class="destino__img" src="img/fotos/villa-tunari-vista.jpg" alt="Villa Tunari con el río y la selva al fondo" width="1400" height="1050" sizes="(min-width: 68rem) 25vw, 50vw" loading="lazy">
+      <span class="destino__info">
+        <span class="destino__nombre">Villa Tunari</span>
+        <span class="destino__meta">Cada 20 min, desde Bs 12,00</span>
+      </span>
+    </a><a class="destino" href="viajes.html?desde=ivirgarzama&amp;hasta=pvillarroel">
+      <img class="destino__img" src="img/fotos/confluencia-rios.jpg" alt="Ríos Chimoré, Ichilo y Mamoré vistos desde el espacio" width="1400" height="932" sizes="(min-width: 68rem) 25vw, 50vw" loading="lazy">
+      <span class="destino__info">
+        <span class="destino__nombre">Puerto Villarroel</span>
+        <span class="destino__meta">Cada 30 min, desde Bs 6,00</span>
+      </span>
+    </a><a class="destino" href="viajes.html?desde=ivirgarzama&amp;hasta=bulobulo">
+      <img class="destino__img" src="img/fotos/bulo-bulo.jpg" alt="Vista aérea de Bulo Bulo y la carretera al oriente" width="1400" height="1050" sizes="(min-width: 68rem) 25vw, 50vw" loading="lazy">
+      <span class="destino__info">
+        <span class="destino__nombre">Bulo Bulo</span>
+        <span class="destino__meta">Cada 40 min, desde Bs 10,00</span>
+      </span>
+    </a>
+  </div>
+  </div>
+</section>
+
+<section class="pasos-sec">
+  <div class="contenedor seccion">
+    <div class="sec-cab sec-cab--centro">
+      <h2>Viajar es fácil</h2>
+      <p>En tres pasos, desde tu celular o en la parada.</p>
+    </div>
+    <ol class="pasos">
+      <li><span class="pasos__n">1</span><span class="pasos__ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg></span><h3>Busca tu viaje</h3><p>Origen, destino y hora, con los asientos libres.</p></li>
+      <li><span class="pasos__n">2</span><span class="pasos__ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v9a2 2 0 002 2h7"/><path d="M7 13h9l2 6"/><path d="M10 15l-1 4"/></svg></span><h3>Elige tu asiento</h3><p>Ventana o pasillo, y pagas con QR o en efectivo.</p></li>
+      <li><span class="pasos__n">3</span><span class="pasos__ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-6.2-6.5-11a6.5 6.5 0 0113 0c0 4.8-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg></span><h3>Sigue tu bus</h3><p>Con el código de tu pasaje, y compártelo con tu familia.</p></li>
+    </ol>
+    <p class="centro"><a class="btn btn--grande" href="viajes.html"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg> Buscar pasajes ahora</a></p>
+  </div>
+</section>
+
+<section class="verifica-banda">
+  <div class="contenedor verifica">
+    <div>
+      <h2>¿Tu pasaje es auténtico?</h2>
+      <p>Escribe el código o escanea el QR con tu celular.</p>
+    </div>
+    <form class="forma-linea" action="verificar.html" method="get">
+      <label class="visually-hidden" for="cod-ini">Código del pasaje</label>
+      <input id="cod-ini" name="codigo" placeholder="CT-2611-0412" autocomplete="off" spellcheck="false">
+      <button class="btn" type="submit">Verificar</button>
+    </form>
+  </div>
+</section>
+</main>
+<section class="banda-azul">
+  <div class="contenedor banda-azul__in">
+    <p class="banda-azul__tit">Viaja con el sindicato del trópico.<br>Pasaje con QR y bus en vivo.</p>
+    <a class="btn btn--blanco" href="viajes.html"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg> Buscar pasajes</a>
+  </div>
+</section>
+<footer class="pie">
+  <div class="contenedor pie__in">
+    <div class="pie__marca">
+      <p class="pie__logo"><img src="img/logo-carrasco-tropical.jpg" alt="" width="56" height="56"><span>Carrasco Tropical</span></p>
+      <p>Sindicato de Transportes Carrasco Tropical. Pasajes con QR y la flota en vivo, del trópico a la ciudad.</p>
+    </div>
+    <nav class="pie__col" aria-label="Navegación del pie">
+      <p class="pie__tit">Navegación</p>
+      <ul><li><a href="index.html">Inicio</a></li><li><a href="viajes.html">Viajes de hoy</a></li><li><a href="mapa.html">Mapa en vivo</a></li><li><a href="seguimiento.html">Sigue tu bus</a></li><li><a href="verificar.html">Verificar pasaje</a></li><li><a href="tarifas.html">Rutas y tarifas</a></li><li><a href="guia.html">Normas de diseño</a></li></ul>
+    </nav>
+    <div class="pie__col">
+      <p class="pie__tit">Sindicato</p>
+      <ul class="pie__datos">
+        <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-6.2-6.5-11a6.5 6.5 0 0113 0c0 4.8-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg><span><small>Sede</small>Ivirgarzama, provincia Carrasco, Cochabamba, Bolivia</span></li>
+        <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5l7 2.8v5.2c0 4.3-3 7.6-7 9-4-1.4-7-4.7-7-9V6.3z"/><path d="M9 12l2 2 4-4"/></svg><span><small>Personería jurídica</small>Resolución Suprema N° 204268</span></li>
+        <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 19.5l1.2-3.6A7.5 7.5 0 1112 19.5a7.6 7.6 0 01-3.7-1z"/></svg><span><small>WhatsApp</small><span class="pendiente">Por confirmar</span></span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="contenedor pie__base">
+    <p>© 2026 Carrasco Tropical. Rutas, horarios, tarifas y vehículos de muestra hasta recibir los datos oficiales de la directiva.</p>
+    <p class="pie__creditos">Fotos de Wikimedia Commons: <a href="https://commons.wikimedia.org/wiki/File:Parque_Nacional_Carrasco_01.jpg">Phernandito</a> (CC BY-SA 4.0), <a href="https://commons.wikimedia.org/wiki/File:Ivirgarzama,_Bol%C3%ADvia%C2%B4s_Puerto_Villarroel_county.jpg">Coordenação-Geral de Observação da Terra/INPE</a> (CC BY-SA 2.0), <a href="https://commons.wikimedia.org/wiki/File:Una_bella_vista_de_villa_tunari.JPG">Gaby condori contreras</a> (CC BY-SA 3.0), <a href="https://commons.wikimedia.org/wiki/File:Villa_Tunari-nX-3.jpg">PsamatheM</a> (CC BY-SA 4.0), <a href="https://commons.wikimedia.org/wiki/File:R%C3%ADo_Esp%C3%ADritu_Santo_(Villa_Tunari).jpg">Grullab</a> (CC BY-SA 4.0), <a href="https://commons.wikimedia.org/wiki/File:Chapare%C2%B4s_river.jpg">ozziebackpacker</a> (CC BY 2.0), <a href="https://commons.wikimedia.org/wiki/File:Cristo_de_la_Concordia_-_Cochabamba.jpg">Einar Paz</a> (CC BY-SA 4.0), <a href="https://commons.wikimedia.org/wiki/File:Bulo_Bulo_-_panoramio.jpg">Gustavo Ayllón A.</a> (CC BY-SA 3.0), <a href="https://commons.wikimedia.org/wiki/File:ISS-46_Bolivia,_confluence_of_Chimor%C3%A9,_Ichilo_and_Mamor%C3%A9_River.jpg">NASA/Tim Kopra</a> (Public domain). Mapa: <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>.</p>
+  </div>
+</footer>
+</div>
+</div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script type="module" src="js/app.js?v=mwwg3t58"></script>
+</body>
+</html>
